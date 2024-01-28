@@ -3,18 +3,14 @@ rm(list=ls())
 day=c(6,12,21,27,32,39,43,89,261,263,270,311)
 n=c(23,22,21,20,19,18,17,14,8,7,6,4)
 y=c(1,1,1,1,1,1,2,1,1,1,1,1)
-
 h=h2=S=numeric(length(n))
-
 for(i in 1:length(n)){
 h[i]=y[i]/n[i]
 h2[i]=1-h[i]
 S[i]=prod(h2[1:i])
 }
-
 result=data.frame(day,n,y,h,S)
 result
-
 N=seq(1,365,1)
 SS=c(rep(1,5),rep(S[1],6),rep(S[2],9),rep(S[3],6),rep(S[4],5),rep(S[5],7),rep(S[6],4)
      ,rep(S[7],46),rep(S[8],172),rep(S[9],2),rep(S[10],7),rep(S[11],41),rep(S[12],55))
